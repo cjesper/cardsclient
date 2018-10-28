@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
+import {Row, Col} from 'react-flexbox-grid'
 import logo from './logo.svg';
 import './App.css';
+
+//Internal
+import CurrentCard from "./Components/CurrentCard.js"
+import TimerBar from "./Components/TimerBar.js"
+import OwnCards from "./Components/OwnCards.js"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <TimerBar />
+          <Col style={{marginTop: "1%"}} xs={12}>
+          <Row center="xs">
+              <CurrentCard cardText="Är det bara jag som är taggad på..." /> 
+            </Row>
+          </Col>
+          <OwnCards />
       </div>
     );
   }
